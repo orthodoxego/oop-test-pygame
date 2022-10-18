@@ -12,7 +12,7 @@ playGame = True
 deltatime = 0
 
 crc = []
-for i in range(10000):
+for i in range(100):
     crc.append(Circle(randint(0, WIDTH), randint(0, HEIGHT),
                       (randint(0, 255), randint(0, 255), randint(0, 255)),
                       randint(5, 50)))
