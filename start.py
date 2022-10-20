@@ -6,7 +6,6 @@ from dataclass.square import Square
 
 pygame.init()
 pygame.display.set_caption("Test OOP")
-pygame.display.set_caption("Test OOP")
 size = [WIDTH, HEIGHT]
 scene = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
@@ -21,9 +20,14 @@ for i in range(1):
 
 sqe = []
 for i in range(100):
-    sqe.append(Square(randint(0, WIDTH), randint(0, HEIGHT),
-                      (randint(0, 255), randint(0, 255), randint(0, 255)),
-                      randint(5, 50), randint(0, WIDTH), randint(0, HEIGHT)))
+    x = randint(0, WIDTH)
+    y = randint(0, HEIGHT)
+    color = (randint(0, 255), randint(0, 255), randint(0, 255))
+    r = randint(5, 50)
+    d = randint(0, WIDTH)
+    e = randint(0, HEIGHT)
+    sqe.append(Square(x, y, color, r, d, e))
+ # def __init__(self, x, y, color, r, d, e):
 
 while playGame:
     for event in pygame.event.get():
@@ -36,11 +40,14 @@ while playGame:
     scene.fill((0, 0, 0))
     # ============================================
 
-    for i in range(len(crc)):
-        crc[i].move()
-        crc[i].draw(scene)
+    pygame.draw.rect(scene, (255, 255, 255), (200, 100, 500, 200))
+
+    # for i in range(len(crc)):
+    #     crc[i].move()
+    #     crc[i].draw(scene)
 
     for i in range(len(sqe)):
+        sqe[i].resize()
         sqe[i].move()
         sqe[i].draw(scene)
 
@@ -49,3 +56,4 @@ while playGame:
 
 
     deltatime = clock.tick(FPS) / 1000
+

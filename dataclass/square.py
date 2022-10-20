@@ -16,8 +16,8 @@ class Square:
         self.y += randint(-5, 5)
 
     def resize(self):
-        self.r += randint(0, 1024)
-        self.d += randint(0, 768)
+        self.r += randint(0, 1)
+        self.d += randint(0, 1)
 
     def draw(self, scene):
         pygame.draw.rect(scene, self.color, (self.x, self.y, self.r, self.d), self.e)
