@@ -5,6 +5,9 @@ class Human:
         self.height = height
         self.weight = weight
 
+    def __str__(self):
+        return f"Привет меня зовут {self.name}, я вешу {self.weight}, а ты склько:))))"
+
     def hi(self):
         print(f"Привет! Меня зовут {self.name}. Мне {2023 - self.year}, у меня рост {self.height} сантиметров, вешу я {self.weight} киллограм")
 
@@ -24,3 +27,4 @@ c.hi()
 a.school()
 b.school()
 c.school()
+print(a, b, c)
